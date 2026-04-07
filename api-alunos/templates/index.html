@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+</head>
+<body>
+    <h1>Cadastro de Alunos</h1>
+
+    <form method="post" action="/alunos">
+        <label for="nome">Nome:
+            <input type="text" name="nome" id="nome" required>
+        </label>
+        <label for="idade">Idade:
+            <input type="number" name="idade" id="idade" required>
+        </label>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+    <hr>
+
+    <h2>Lista de Alunos</h2>
+
+    <ul>
+        {% for aluno in alunos %}
+            <li>
+                {{aluno.nome}} - {{aluno.idade}} anos
+                [<a href="/editar/{{ aluno.id }}">Editar</a>]
+                [<a href="/remover/{{ aluno.id }}"
+                    onclick="return confirm('Tem certeza que deseja remover este aluno?')">Remover</a>]
+            </li>
+        {% endfor %}
+    </ul>
+
+    
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtualenv
+venv/
+.env/
+
+# Editor/OS
+.DS_Store
+.vscode/
+*.swp
